@@ -1,3 +1,4 @@
+
 """
 # Input
 3
@@ -29,14 +30,20 @@ Math:20
 ---------------------------------------------------
 """
 my_list = []
-for _ in range(int(input("How many of you have input? "))):
-    name, *scors = input("enter name and scors: ").split(" ")
 
-    sum_of_scors = 0
-    for scor in scors:
-        sum_of_scors += int(scor)
+try:
+    for _ in range(int(input("How many of you have input? "))):
+        name, *scors = input("enter name and scors: ").split(" ")
 
-    my_list.append([name, *scors, f"{sum_of_scors/ len(scors) :.2f}"])
+        sum_of_scors = 0
+        for scor in scors:
+            sum_of_scors += int(scor)
+
+        my_list.append([name, *scors, f"{sum_of_scors/ len(scors) :.2f}"])
+
+except ValueError:
+    print("Please enter only integers")
+
 
 Name_Course = ["Name", "Math", "Art", "PE", "AVG"]
 new_Course = []
